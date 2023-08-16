@@ -286,4 +286,6 @@ counts_12tp <- c[which(rownames(c) %in% DE_12tp),]
 count_mx3 <- as.matrix(counts_12tp[,which(colnames(counts_12tp) %in% c('DEgenes_tp1', 'DEgenes_tp3', 'DEgenes_tp5', 'DEgenes_tp7', 'DEgenes_tp12'))])
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+jpeg(paste0(initial_loc,output_plots,"Heatmap_counts_mx3"))
 f.heatmap(count_mx3)
+dev.off()
