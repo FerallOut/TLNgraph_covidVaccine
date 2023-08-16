@@ -245,7 +245,7 @@ f.CalculateModRatios = function(DEfiles){
     de.table = as.matrix(read.table(DEfile,row.names=1,header=T,sep="\t"))
     vx = names(Ann.Symbol); names(vx) = Ann.Symbol
     rownames(de.table) = vx[rownames(de.table)]
-    de.up = rownames(de.table)[de.table[,'adj.P.Val']<0.05 & de.table[,'logFC']>log2(1.5)]              # replaced de.table[,2] with de.table[,'adj.P.Val'], and de.table[,1] with de.table[,'logFC']
+    de.up = rownames(de.table)[de.table[,'adj.P.Val']<0.05 & de.table[,'logFC']>log2(1.5)]             
     de.down = rownames(de.table)[de.table[,'adj.P.Val']<0.05 & de.table[,'logFC']<(-log2(1.5))]         # same
     #fb = function(mod){return((length(intersect(de.up,mod))-length(intersect(de.down,mod)))/length(mod))}
     fb = function(mod){return((length(intersect(de.up,mod))-length(intersect(de.down,mod)))/length(intersect(rownames(de.table),mod)))}
